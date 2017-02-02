@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+<meta charset="UTF-8"></meta>
+<title>update manufacturer</title>
+</head>
+<body>
+	<h:form>
+		<h3><b>Update Manufacturer</b></h3>
+		<b>(The Manufacturer code cannot be updated, only the Name and Details)</b>
+		<br/><br/>
+		Code: <h:inputText value="#{manufacturer.manuCode}"/> 
+		<br /><br />
+		Name: <h:inputText value="#{manufacturer.manuName}" /> 
+		<br /><br />
+		Details: <h:inputText value="#{manufacturer.manuDetail}" /> 
+		<br /><br/>
+		<h:commandButton value="Update" action="#{manufacturerController.renewManufacturer(manufacturer)}" ></h:commandButton>
+		<br/>
+		<h:outputLink value="index.xhtml">Home</h:outputLink>  &#160;&#160;
+		<h:outputLink value="MngMft.xhtml">Manufacturers</h:outputLink>
+	</h:form>
+
+</body>
+</html>

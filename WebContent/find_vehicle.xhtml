@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Find Results</title>
+<f:metadata>
+	<f:event type="preRenderView"
+		listener="#{findVehicleController.loadVehicles()}" />
+</f:metadata>
+
+<STYLE type="text/css">
+.dataTable {
+	border: 1px solid #FFFFFF;
+}
+
+.table-header {
+	color: #FFFFFF;
+	background-color:#0330F9;
+}
+
+.table-odd-row{
+	background-color:#909DDA;
+}
+
+.table-even-row{
+	background-color:#C4C9E1;
+}
+
+</STYLE>
+</head>
+<body>
+	
+	<h:dataTable value="#{findVehicleController.findVehicles}" var="m"
+		headerClass="table-header" rowClasses="table-odd-row,table-even-row">
+
+		<h:column>
+			<f:facet name="header">Rdhistration</f:facet>
+		 	 #{m.reg}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Manufacturer Code</f:facet>
+		 	 #{m.manuCode}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Manufacturer Name</f:facet>
+		 	 #{m.manuName}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Model Code</f:facet>
+		 	 #{m.modelCode}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Model Name</f:facet>
+		 	 #{m.modelName}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Mileage</f:facet>
+		 	 #{m.mileage}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Price</f:facet>
+		 	 #{m.price}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Colour</f:facet>
+		 	 #{m.colour}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Fuel</f:facet>
+		 	 #{m.fuel}
+		</h:column>
+		
+		
+	</h:dataTable>
+	<br/>
+	
+	<h:outputLink value="index.xhtml">HOME</h:outputLink>&#160;&#160;
+	<h:outputLink value="FindCar.xhtml">SEARCH</h:outputLink>
+	
+
+
+</body>
+</html>

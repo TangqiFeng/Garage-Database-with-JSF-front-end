@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Find Cars</title>
+</head>
+<body>
+	<h:form>
+		<h3><b>Find All Vehicles</b></h3>
+		<br/>
+		Prise: <h:selectOneMenu value="#{findVehicle.flag}">
+			  <f:selectItem itemValue="G" itemLabel="Greater Than"/>
+			  <f:selectItem itemValue="L" itemLabel="Less Than"/>
+			  <f:selectItem itemValue="E" itemLabel="Equal To"/>
+			  </h:selectOneMenu>
+		<h:inputText value="#{findVehicle.price}" />
+		<br /><br />
+		Colour: <h:inputText value="#{findVehicle.colour}" />
+		<br /><br />
+		Fuel: <h:selectOneMenu value="#{findVehicle.fuel}">
+			  <f:selectItem itemValue="petrol" itemLabel="Petrol"/>
+			  <f:selectItem itemValue="diesel" itemLabel="Diesel"/>
+			  </h:selectOneMenu>
+		<br /><br/>
+		<h:commandButton value="Search" action="#{findVehicleController.loadVehicles(findVehicle)}" ></h:commandButton>
+		<br/><br />
+		<h:outputLink value="index.xhtml">Home</h:outputLink>
+	</h:form>
+
+</body>
+</html>
